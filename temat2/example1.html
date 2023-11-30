@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Document</title>
+
+    <style>
+        .field {
+
+            background-color: gray;
+
+            border: solid 2px black;
+
+            width: 3em;
+
+            margin: 5px;
+
+            height: 3em;
+
+            float: left;
+
+        }
+    </style>
+
+    <script>
+
+        function init() {
+
+            for (let j = 0; j < 5; j++) {
+
+                let element = document.createElement("div")
+
+                element.setAttribute("id", "f_" + j)
+
+                element.setAttribute("class", "field")
+
+                element.setAttribute("onclick", "user_input('f_" + j + "')")
+
+                document.getElementById("game").appendChild(element)
+
+            }
+
+        }
+
+
+
+
+
+    </script>
+
+</head>
+
+<body onload="init();">
+
+    <div id="game">
+
+    </div>
+
+    <button onclick="funkcja()">Button_name </button>
+
+</body>
+
+</html>
