@@ -1,0 +1,3 @@
+set-executionpolicy remotesigned - allow scripting. Use as admin
+swagger project create node_gallery
+swagger project start node_gallery
