@@ -4,3 +4,5 @@ swagger project start node_gallery
 https://github.com/swagger-api/swagger-node/issues/586
 swagger project edit node_gallery
 x-swagger-router-controller: hello_world - trzeba rejestrowac swój endpoind w yaml
+
+schema i referencja też musi być zawarta dla odpowiedzi

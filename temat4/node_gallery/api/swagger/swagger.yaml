@@ -51,16 +51,19 @@ paths:
       operationId: welcome
       parameters:
         - name: firstName
-          in: formData
-          required: true
+          in: query
+          required: false
           type: string
         - name: lastName
-          in: formData
-          required: true
+          in: query
+          required: false
           type: string
       responses:
         '200':
           description: OK
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/HelloWorldResponse"
 # complex objects have schema definitions
 definitions:
   HelloWorldResponse:
