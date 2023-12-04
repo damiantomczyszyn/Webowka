@@ -26,6 +26,7 @@ var util = require('util');
  */
 module.exports = {
   hello: hello
+  welcome: welcome
 };
 
 /*
@@ -41,4 +42,11 @@ function hello(req, res) {
 
   // this sends back a JSON response which is a single string
   res.json(hello);
+}
+
+function welcome(req, res) {
+  var firstName = req.swagger.params.firstName.value || 'John';
+  var lastName = req.swagger.params.lastName.value || 'Doe';
+  var welcomeMessage = util.format('Witaj, %s %s!', firstName, lastName);
+  res.json(welcomeMessage);
 }
