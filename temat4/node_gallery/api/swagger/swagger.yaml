@@ -44,6 +44,23 @@ paths:
             $ref: "#/definitions/ErrorResponse"
   /swagger:
     x-swagger-pipe: swagger_raw
+  /welcome:
+    x-swagger-router-controller: hello_world
+    get:
+      summary: Witaj
+      operationId: welcome
+      parameters:
+        - name: firstName
+          in: formData
+          required: true
+          type: string
+        - name: lastName
+          in: formData
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
 # complex objects have schema definitions
 definitions:
   HelloWorldResponse:
