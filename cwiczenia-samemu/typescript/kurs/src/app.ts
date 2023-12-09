@@ -27,3 +27,12 @@ addButtonElement.addEventListener("click", () => {
     const sum = add(Number(input1Element.value), Number(input2Element.value));
     console.log(sum)
 });
+
+
+let test: string | number | boolean;
+
+test = "test";
+test = 21;
+test = true;
+//test = []; nie mozna bo nie zadeklarowane w union
+

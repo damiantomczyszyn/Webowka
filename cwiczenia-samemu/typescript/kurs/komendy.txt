@@ -8,3 +8,20 @@ document.querySelector - domyslnie bedzie mialo typ element
 
 w ustawieniach ustawiamy sobie compile aby śledził na bierząco
 npm run compile -> tsc --watch
+
+type inference - inferencja typow // nie trzeba pisac typow bo samo wybierze odpowiedni
+
+Jeśli do arg funkcji nie dodamy typów to TS pozwoli na przyjecie dowolnych typow, mimo iz metody
+wykorzystane nie beda sie zgadzac z typami
+
+
+ pomiedzy tymi znakami `` mozna uzywac ${arg}
+
+wartości z url są przyjmowane jako tekst
+
+URLSearchParams(
+    window.location.search
+).get("discount") === "true";
+
+
+
