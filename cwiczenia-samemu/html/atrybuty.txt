@@ -1,0 +1,89 @@
+<a href="https://www.w3schools.com">Visit W3Schools</a> - a hyperlink, href - url
+
+<img src=x >
+<img src="img_girl.jpg" width="500" height="600">
+<img src="img_girl.jpg" alt="Girl with a jacket">
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+...
+</body>
+</html>
+
+<p title="I'm a tooltip">This is a paragraph.</p>
+
+
+All HTML elements can have attributes
+The href attribute of <a> specifies the URL of the page the link goes to
+The src attribute of <img> specifies the path to the image to be displayed
+The width and height attributes of <img> provide size information for images
+The alt attribute of <img> provides an alternate text for an image
+The style attribute is used to add styles to an element, such as color, font, size, and more
+The lang attribute of the <html> tag declares the language of the Web page
+The title attribute defines some extra information about an element
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+
+<tagname style="property:value;">
+
+
+Tag	Description
+<p>	Defines a paragraph
+<hr>	Defines a thematic change in the content
+<br>	Inserts a single line break
+<pre>	Defines pre-formatted text
+
+
+
+<b> - Bold text
+<strong> - Important text
+<i> - Italic text
+<em> - Emphasized text
+<mark> - Marked text
+<small> - Smaller text
+<del> - Deleted text
+<ins> - Inserted text
+<sub> - Subscript text
+<sup> - Superscript text
+
+
+
+Tag	Description
+<abbr>	Defines an abbreviation or acronym
+<address>	Defines contact information for the author/owner of a document
+<bdo>	Defines the text direction
+<blockquote>	Defines a section that is quoted from another source
+<cite>	Defines the title of a work
+<q>	Defines a short inline quotation
+
+<!-- This is a comment -->
+<!-- This is a comment -->
+
+<!--
+wielolinijkowy
+komentarz
+-->
+
+
+The target attribute specifies where to open the linked document.
+
+The target attribute can have one of the following values:
+
+_self - Default. Opens the document in the same window/tab as it was clicked
+_blank - Opens the document in a new window or tab
+_parent - Opens the document in the parent frame
+_top - Opens the document in the full body of the window
+
+<a href="https://www.w3schools.com/" target="_blank">Visit W3Schools!</a>
+
+
+
+przycisk jako link
+<button onclick="document.location='default.asp'">HTML Tutorial</button>
