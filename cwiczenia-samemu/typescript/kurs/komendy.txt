@@ -1,0 +1,5 @@
+npm init -y
+
+wpisujemy w pliku html ! i generuje template html
+
+w scr musi być typscript, a do kompilacji wystarczy samo polecenie tsc zamiast tsc X.ts
