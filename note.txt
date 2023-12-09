@@ -6,3 +6,5 @@ swagger project edit node_gallery
 x-swagger-router-controller: hello_world - trzeba rejestrowac swój endpoind w yaml
 
 schema i referencja też musi być zawarta dla odpowiedzi
+
+project start z parametrem -m na koncu
