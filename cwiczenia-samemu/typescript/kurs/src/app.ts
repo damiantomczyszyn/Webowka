@@ -34,5 +34,16 @@ let test: string | number | boolean;
 test = "test";
 test = 21;
 test = true;
-//test = []; nie mozna bo nie zadeklarowane w union
+//test = []; nie mozna bo nie zadeklarowane w 
 
+
+const checkboxElement: HTMLInputElement = document.createElement("input");
+checkboxElement.type = "checkbox";
+checkboxElement.name = "name";
+checkboxElement.id = "100";
+
+document.body.appendChild(document.createElement('br'));
+document.body.appendChild(checkboxElement);
+
+
+console.log("koniec skryptu");
