@@ -1,49 +1,108 @@
-console.log("test!");
+const taskNameInputElement: HTMLInputElement = document.querySelector("#name");
+const addButtonElement: HTMLButtonElement = document.querySelector("button");
+const tasksContainerElement: HTMLElement = document.querySelector(".tasks");
+const categoriesContainerElement: HTMLElement =
+    document.querySelector(".categories");
 
-let age: number = 29;
+let selectedCategory: Category;
 
-let ageAsString: string = "dwadziescia dziewiec";
-ageAsString = `${age}`;
+type Category = "general" | "work" | "gym" | "hobby";
 
-console.log(ageAsString);
-
-const add = (v1: number, v2: number) => v1 + v2;
-const add2 = (v1: number, v2: number = 5) => v1 + v2;
-const add3 = (v1: number, v2?: number) => {
-    v2 = v2 ?? 0;
-    return v1 + v2
+interface Task {
+    name: string;
+    done: boolean;
+    category?: Category;
 }
 
+const categories: Category[] = ["general", "work", "gym", "hobby"];
 
-console.log(add(10, 40));
-console.log(add2(20));
-console.log(add3(20));
+const tasks: Task[] = [
+    {
+        name: "Wyrzucić śmieci",
+        done: false,
+        category: "hobby",
+    },
+    {
+        name: "Pójść na siłkę",
+        done: true,
+        category: "gym",
+    },
+    {
+        name: "Nakarmić koty",
+        done: false,
+        category: "work",
+    },
+];
 
-const input1Element: HTMLInputElement = document.querySelector("#input1");
-const input2Element: HTMLInputElement = document.querySelector("#input2");
-const addButtonElement = document.querySelector("#button");
+const render = () => {
+    tasksContainerElement.innerHTML = "";
+    tasks.forEach((task, index) => {
+        const taskElement: HTMLElement = document.createElement("li");
+        if (task.category) {
+            taskElement.classList.add(task.category);
+        }
+        const id: string = `task-${index}`;
 
-addButtonElement.addEventListener("click", () => {
-    const sum = add(Number(input1Element.value), Number(input2Element.value));
-    console.log(sum)
+        const labelElement: HTMLLabelElement = document.createElement("label");
+        labelElement.innerText = task.name;
+        labelElement.setAttribute("for", id);
+
+        const checkboxElement: HTMLInputElement =
+            document.createElement("input");
+        checkboxElement.type = "checkbox";
+        checkboxElement.name = task.name;
+        checkboxElement.id = id;
+        checkboxElement.checked = task.done;
+        checkboxElement.addEventListener("change", () => {
+            task.done = !task.done;
+        });
+
+        taskElement.appendChild(labelElement);
+        taskElement.appendChild(checkboxElement);
+
+        tasksContainerElement.appendChild(taskElement);
+    });
+};
+
+const renderCategories = () => {
+    categories.forEach((category) => {
+        const categoryElement: HTMLElement = document.createElement("li");
+
+        const radioInputElement: HTMLInputElement =
+            document.createElement("input");
+        radioInputElement.type = "radio";
+        radioInputElement.name = "category";
+        radioInputElement.value = category;
+        radioInputElement.id = `category-${category}`;
+        radioInputElement.addEventListener("change", () => {
+            selectedCategory = category;
+        });
+
+        const labelElement: HTMLLabelElement = document.createElement("label");
+        labelElement.setAttribute("for", `category-${category}`);
+        labelElement.innerText = category;
+
+        categoryElement.appendChild(radioInputElement);
+        categoryElement.appendChild(labelElement);
+
+        categoriesContainerElement.appendChild(categoryElement);
+    });
+};
+
+const addTask = (task: Task) => {
+    tasks.push(task);
+};
+
+addButtonElement.addEventListener("click", (event: Event) => {
+    event.preventDefault();
+    addTask({
+        name: taskNameInputElement.value,
+        done: false,
+        category: selectedCategory,
+    });
+    render();
 });
 
-
-let test: string | number | boolean;
-
-test = "test";
-test = 21;
-test = true;
-//test = []; nie mozna bo nie zadeklarowane w 
-
-
-const checkboxElement: HTMLInputElement = document.createElement("input");
-checkboxElement.type = "checkbox";
-checkboxElement.name = "name";
-checkboxElement.id = "100";
-
-document.body.appendChild(document.createElement('br'));
-document.body.appendChild(checkboxElement);
-
-
-console.log("koniec skryptu");
+addTask({ name: "zrobić klatę", category: "gym", done: false });
+renderCategories();
+render();
