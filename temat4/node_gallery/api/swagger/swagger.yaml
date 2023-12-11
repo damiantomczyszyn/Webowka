@@ -69,7 +69,7 @@ paths:
     get:
       operationId: zdjecie
       parameters:
-        - zdjecie_id: zdjecieId
+        - name: zdjecieId
           in: query
           required: false
           type: string
