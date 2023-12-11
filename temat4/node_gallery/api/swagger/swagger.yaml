@@ -64,9 +64,30 @@ paths:
           schema:
             # a pointer to a definition
             $ref: "#/definitions/HelloWorldResponse"
+  /zdjecie:
+    x-swagger-router-controller: zdjecie
+    get:
+      operationId: zdjecie
+      parameters:
+        - zdjecie_id: zdjecieId
+          in: query
+          required: false
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/ZdjecieResponse"
 # complex objects have schema definitions
 definitions:
   HelloWorldResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
+  ZdjecieResponse:
     required:
       - message
     properties:
